@@ -9,7 +9,6 @@ public class Repository {
             new Smartphone(3, "MN-54", 50, "Russian Phones")};
 
 
-
     Smartphone testPhone = new Smartphone(4, "SE-10", 400, "Apple");
     Book bookToAdd = new Book(4, "El pricionero del cielo", 50, "Carlos Ruiz Zafon");
 
@@ -27,7 +26,6 @@ public class Repository {
 
     public Product[] getAll() {
         for (int i = 0; i < repo.length; i++) {
-            System.out.println(repo[i]);
         }
         return repo;
     }
