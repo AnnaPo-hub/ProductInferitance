@@ -4,9 +4,9 @@ public class Repository {
     Product[] repo = {new Book(1, "In Search of Lost Time", 200, "Proust"),
             new Book(2, "The Colossus of Maroussi", 100, "Henry Miller"),
             new Book(3, "The Silent World", 100, "Yves Cousteau"),
-            new Smartphone(1, "Galaxy-300", 300, "Samsung"),
-            new Smartphone(2, "X-3", 300, "Xiaomi"),
-            new Smartphone(3, "MN-54", 50, "Russian Phones")};
+            new Smartphone(4, "Galaxy-300", 300, "Samsung"),
+            new Smartphone(5, "X-3", 300, "Xiaomi"),
+            new Smartphone(6, "MN-54", 50, "Russian Phones")};
 
     public void saveProduct(Product item) {
         Product[] newRepo = new Product[repo.length + 1];
@@ -25,6 +25,7 @@ public class Repository {
         return repo;
     }
 
+
     public void removeByID(int id) {
         boolean b = false;
         for (Product item : repo) {
@@ -32,8 +33,11 @@ public class Repository {
                 b = true;
                 break;
             }
+
         }
+
         if (b) {
+
             Product[] newRepo = new Product[repo.length - 1];
             int index = 0;
             for (Product item : repo) {
@@ -43,7 +47,11 @@ public class Repository {
                 }
             }
             repo = newRepo;
+        } else {
+            System.out.println(" Element with id: "+ id +" not found");
+            throw new NotFoundException();
+
         }
+
     }
 }
-
