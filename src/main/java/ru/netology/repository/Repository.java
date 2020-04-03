@@ -12,6 +12,7 @@ public class Repository {
             new Smartphone(2, "X-3", 300, "Xiaomi"),
             new Smartphone(3, "MN-54", 50, "Russian Phones")};
 
+
     public void save(Product item) {
         Product[] newRepo = new Product[repo.length + 1];
         System.arraycopy(repo, 0, newRepo, 0, repo.length + 1);
@@ -24,7 +25,6 @@ public class Repository {
     public Product[] getAll() {
         return repo;
     }
-
 
     public void removeById(int id) {
         boolean ifExists = false;
@@ -47,4 +47,3 @@ public class Repository {
         }
     }
 }
-
