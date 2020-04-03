@@ -27,14 +27,14 @@ public class Repository {
 
 
     public void removeById(int id) {
-        boolean b = false;
+        boolean ifExists = false;
         for (Product item : repo) {
             if (item.getId() == id) {
-                b = true;
+                ifExists = true;
                 break;
             }
         }
-        if (b) {
+        if (ifExists) {
             Product[] newRepo = new Product[repo.length - 1];
             int index = 0;
             for (Product item : repo) {
