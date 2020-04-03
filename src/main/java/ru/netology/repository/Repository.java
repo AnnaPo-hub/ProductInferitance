@@ -1,4 +1,8 @@
-package ru.netology.domain;
+package ru.netology.repository;
+
+import ru.netology.domain.Book;
+import ru.netology.domain.Product;
+import ru.netology.domain.Smartphone;
 
 public class Repository {
     Product[] repo = {new Book(1, "In Search of Lost Time", 200, "Proust"),
@@ -9,11 +13,9 @@ public class Repository {
             new Smartphone(3, "MN-54", 50, "Russian Phones")};
 
 
-    public void saveProduct(Product item) {
+    public void save(Product item) {
         Product[] newRepo = new Product[repo.length + 1];
-        for (int i = 0; i < repo.length; i++) {
-            newRepo[i] = repo[i];
-        }
+        System.arraycopy(repo, 0, newRepo,0, repo.length);
         int lastIndex = newRepo.length - 1;
         newRepo[lastIndex] = item;
         repo = newRepo;
@@ -21,20 +23,18 @@ public class Repository {
 
 
     public Product[] getAll() {
-        for (int i = 0; i < repo.length; i++) {
-        }
         return repo;
     }
 
-    public void removeByID(int id) {
-        boolean b = false;
+    public void removeById(int id) {
+        boolean ifExists = false;
         for (Product item : repo) {
             if (item.getId() == id) {
-                b = true;
+                ifExists = true;
                 break;
             }
         }
-        if (b) {
+        if (ifExists) {
             Product[] newRepo = new Product[repo.length - 1];
             int index = 0;
             for (Product item : repo) {
