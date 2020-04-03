@@ -1,8 +1,10 @@
-package ru.netology.domain;
+package ru.netology.manager;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.netology.domain.Product;
+import ru.netology.repository.Repository;
 
 @AllArgsConstructor
 @NoArgsConstructor

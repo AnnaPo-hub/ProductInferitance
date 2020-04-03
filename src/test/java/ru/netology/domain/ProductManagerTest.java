@@ -1,6 +1,8 @@
 package ru.netology.domain;
 
 import org.junit.jupiter.api.Test;
+import ru.netology.manager.ProductManager;
+import ru.netology.repository.Repository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
