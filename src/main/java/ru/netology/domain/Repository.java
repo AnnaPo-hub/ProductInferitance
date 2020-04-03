@@ -33,11 +33,8 @@ public class Repository {
                 b = true;
                 break;
             }
-
         }
-
         if (b) {
-
             Product[] newRepo = new Product[repo.length - 1];
             int index = 0;
             for (Product item : repo) {
@@ -48,10 +45,7 @@ public class Repository {
             }
             repo = newRepo;
         } else {
-            System.out.println(" Element with id: "+ id +" not found");
-            throw new NotFoundException();
-
+            throw new NotFoundException(" Element with id: " + id + " not found");
         }
-
     }
 }

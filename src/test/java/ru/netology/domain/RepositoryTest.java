@@ -23,8 +23,6 @@ class RepositoryTest {
     @Test
     void shouldRemoveByIDIfDoesNotExist() {
         Repository repo = new Repository();
-        repo.removeByID(4);
         assertThrows(NotFoundException.class, () -> repo.removeByID(10));
     }
-
 }
