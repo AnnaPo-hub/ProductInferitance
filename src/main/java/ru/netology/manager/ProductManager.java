@@ -1,18 +1,18 @@
-package ru.netology.domain;
+package ru.netology.manager;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import ru.netology.domain.Product;
+import ru.netology.repository.Repository;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
 public class ProductManager {
     private Repository repo;
 
 
     public void addProduct(Product item) {
-        repo.saveProduct(item);
+        repo.save(item);
     }
 
     public Product[] searchBy(String text) {

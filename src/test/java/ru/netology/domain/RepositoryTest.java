@@ -1,6 +1,7 @@
 package ru.netology.domain;
 
 import org.junit.jupiter.api.Test;
+import ru.netology.repository.Repository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,8 +10,8 @@ class RepositoryTest {
 
 
     @Test
-    void shouldRemoveByIDIfExists() {
-        repo.removeByID(4);
+    void shouldRemoveByIdIfExists() {
+        repo.removeById(4);
         Product[] expected = {new Book(1, "In Search of Lost Time", 200, "Proust"),
                 new Book(2, "The Colossus of Maroussi", 100, "Henry Miller"),
                 new Book(3, "The Silent World", 100, "Yves Cousteau"),
@@ -21,8 +22,8 @@ class RepositoryTest {
 
 
     @Test
-    void shouldRemoveByIDIfDoesNotExist() {
+    void shouldRemoveByIdIfDoesNotExist() {
         Repository repo = new Repository();
-        assertThrows(NotFoundException.class, () -> repo.removeByID(10));
+        assertThrows(NotFoundException.class, () -> repo.removeById(10));
     }
 }
