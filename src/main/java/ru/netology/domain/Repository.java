@@ -5,12 +5,8 @@ public class Repository {
             new Book(2, "The Colossus of Maroussi", 100, "Henry Miller"),
             new Book(3, "The Silent World", 100, "Yves Cousteau"),
             new Smartphone(1, "Galaxy-300", 300, "Samsung"),
-            new Smartphone(2, "X-3", 300, "Galaxy-300"),
+            new Smartphone(2, "X-3", 300, "Xiaomi"),
             new Smartphone(3, "MN-54", 50, "Russian Phones")};
-
-
-    Smartphone testPhone = new Smartphone(4, "SE-10", 400, "Apple");
-    Book bookToAdd = new Book(4, "El pricionero del cielo", 50, "Carlos Ruiz Zafon");
 
 
     public void saveProduct(Product item) {

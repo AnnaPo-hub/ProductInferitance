@@ -34,5 +34,14 @@ class ProductManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    void shouldSearchByPhoneName() {
+        Repository repository = new Repository();
+        ProductManager manager = new ProductManager(repository);
+        Product[] expected = {new Smartphone(1, "Galaxy-300", 300, "Samsung")};
+        Product[] actual = manager.searchBy("Galaxy-300");
+        assertArrayEquals(expected, actual);
+    }
+
 
 }
